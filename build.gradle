@@ -164,8 +164,6 @@ task apiJar(type: Jar) {
 }
  
 artifacts {
-    archives deobfJar
-    archives apiJar
     archives jar
 }
 
