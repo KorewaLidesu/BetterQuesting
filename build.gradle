@@ -220,13 +220,6 @@ idea {
 }
 
 publishing {
-    repositories {
-        maven {
-            name propertyString('maven_name').replaceAll("\\s", "")
-            url propertyString('maven_url')
-            credentials(PasswordCredentials)
-        }
-    }
     publications {
         mavenJava(MavenPublication) {
             artifact Jar
