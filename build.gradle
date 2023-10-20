@@ -152,6 +152,7 @@ processResources {
 
 task deobfJar(type: Jar) {
         from sourceSets.main.output
+    archiveClassifier.set('deobf')
 }
 
 task apiJar(type: Jar) {
@@ -159,6 +160,7 @@ task apiJar(type: Jar) {
             include 'betterquesting/api/**'
             include 'betterquesting/api2/**'
         }
+    archiveClassifier.set('api')
 }
  
 artifacts {
