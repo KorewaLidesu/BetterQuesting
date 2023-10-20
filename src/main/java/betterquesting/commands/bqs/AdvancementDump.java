@@ -89,13 +89,12 @@ public class AdvancementDump {
                 Iterator<Advancement> iter = iterStack.poll();
 
                 while (iter.hasNext()) {
-                        Advancement child = iter.next();
-                        if (child != null) {
-                            IQuestLineEntry qle = ql.createNew(idMap.get(child).getID());
-                            qle.setPosition((int) (child.getDisplay().getX() * 32F), (int) (child.getDisplay().getY() * 32F));
-                            qle.setSize(24, 24);
-                            iterStack.add(child.getChildren().iterator());
-                        }
+                    Advancement child = iter.next();
+                    if (child != null) {
+                        IQuestLineEntry qle = ql.createNew(idMap.get(child).getID());
+                        qle.setPosition((int) (child.getDisplay().getX() * 32F), (int) (child.getDisplay().getY() * 32F));
+                        qle.setSize(24, 24);
+                        iterStack.add(child.getChildren().iterator());
                     }
                 }
             }
