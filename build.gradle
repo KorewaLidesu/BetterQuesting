@@ -222,7 +222,7 @@ idea {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact Jar
+            artifact jar
             setGroupId(project.maven_group)// Publish with root package as maven group
             setArtifactId(project.archives_base_name) // Publish artifacts with mod id as the artifact id
 
