@@ -219,3 +219,26 @@ idea {
     }
 }
 
+publishing {
+    repositories {
+        maven {
+            name propertyString('maven_name').replaceAll("\\s", "")
+            url propertyString('maven_url')
+            credentials(PasswordCredentials)
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            artifact Jar
+            setGroupId(project.maven_group)// Publish with root package as maven group
+            setArtifactId(project.archives_base_name) // Publish artifacts with mod id as the artifact id
+
+            // Custom artifact:
+            // If you want to publish a different artifact to the one outputted when building normally
+            // Create a different gradle task (Jar task), in extra.gradle
+            // Remove the 'from components.java' line above
+            // Add this line (change the task name):
+            // artifacts task_name
+        }
+    }
+}
